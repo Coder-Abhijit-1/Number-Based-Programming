@@ -1,0 +1,16 @@
+# Logic: A number divisible by 7 or ends with a 7.
+# Examples:
+# * 49: Divisible by 7.
+# * 27: Ends with 7.
+
+def is_buzz_number(n):
+    if n % 7 == 0:
+        return True
+    n_str = str(n)
+    return n_str.endswith("7")
+    
+number = int(input("Enter any number: "))
+if is_buzz_number(number):
+    print("Is a Buzz Number.")
+else:
+    print("Is not a Buzz Number.")
