@@ -1,0 +1,22 @@
+# Logic: A number where the sum of the digits is equal to the product of the digits.
+# Examples:
+# * 112: Sum = 1 + 1 + 2 = 4, Product = 1 × 1 × 2 = 4
+# * 22: Sum = 2 + 2 = 4, Product = 2 × 2 = 4
+Both have sum = product.
+
+def spy_number_checking(n):
+    d = 0
+    sum = 0
+    pod = 1
+    while n > 0:  
+        r = n % 10
+        sum = sum + r
+        pod = pod * r
+        n = n // 10
+    if sum == pod:
+        print("Is a Spy Number.")
+    else:
+        print("Is not a Spy Number.")
+
+n = int(input("Enter any number: "))
+spy_number_checking(n)
