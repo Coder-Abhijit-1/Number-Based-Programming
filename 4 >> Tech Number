@@ -1,0 +1,19 @@
+# Logic: A number with an even number of digits that can be split into two parts, and the square of their sum equals the number.
+# Examples:
+# * 2025: Split into 20 and 25, Sum = 20 + 25 = 45, (45)² = 2025.
+# * 3025: Split into 30 and 25, Sum = 30 + 25 = 55, (55)² = 3025.
+
+def is_tech_number(n):
+    n_str = str(n)
+    if len(n_str) % 2 != 0:
+        return False
+    split_index = len(n_str) // 2
+    first_half = int(n_str[:split_index])
+    second_half = int(n_str[split_index:])
+    return (first_half + second_half)**2 == n
+    
+number = int(input("Enter any number: "))
+if is_tech_number(number):
+    print("Is a Tech Number.")
+else:
+    print("Is not a Tech Number.")
