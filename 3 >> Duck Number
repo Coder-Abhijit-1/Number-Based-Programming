@@ -1,0 +1,14 @@
+# Logic: A number that contains at least one '0' but not at the beginning.
+# Examples:
+# * 203: Contains a '0' but doesn’t start with it.
+# * 1405: Contains a '0' in the middle.
+
+def is_duck_number(n):
+    n_str = str(n)
+    return '0' in n_str[1:]
+
+number = int(input("Enter any number: "))
+if is_duck_number(number):
+    print("Is a Duck Number.")
+else:
+    print("Is not a Duck Number.")
