@@ -1,1 +1,20 @@
+# Logic: A number where the sum of its digits repeatedly added together equals 1.
+# Examples:
+# * 1729: 1 + 7 + 2 + 9 = 19, 1 + 9 = 10, 1 + 0 = 1.
+# * 19: 1 + 9 = 10, 1 + 0 = 1.
 
+def magic_number(n):
+    while n > 9:
+        sum_digits = 0
+        while n > 0:
+            sum_digits += n%10
+            n //= 10
+        n = sum_digits
+    return n == 1
+
+
+n = int(input("Enter any number : "))
+if magic_number(n):
+    print("Is a Magic Number")
+else:
+    print("Is not a Magic Number")
