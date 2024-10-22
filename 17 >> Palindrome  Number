@@ -1,1 +1,17 @@
+# Logic: The number which is the same after reversing it
+# Exercise :
+# * 1221 reversing -> 1221
 
+def palindrome_number(n):
+    str_n = str(n)
+    rev_n = str_n[::-1]
+    if rev_n == str_n:
+        return True
+    else:
+        return False
+
+n = int(input("Enter any number: "))
+if palindrome_number(n):
+    print("Is a Palindrome Number")
+else:
+    print("Is not a Palindrome Number")
