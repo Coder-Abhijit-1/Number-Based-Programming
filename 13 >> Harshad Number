@@ -1,0 +1,23 @@
+# Logic: A number divisible by the sum of its digits.
+# Examples:
+# * 18: Sum of digits = 1 + 8 = 9, and 18 ÷ 9 = 2.
+# * 24: Sum of digits = 2 + 4 = 6, and 24 ÷ 6 = 4.
+
+def harshad_number(n):
+    digits_sum = 0
+    temp = n
+    while temp > 0:
+        rem = temp % 10
+        digits_sum += rem
+        temp //= 10
+        
+    if n % digits_sum == 0:
+        return True
+    else :
+        return False
+
+n = int(input("Enter any number: "))
+if harshad_number(n):
+    print("Is a Harshad Number")
+else:
+    print("Is not a Harshad Number")
