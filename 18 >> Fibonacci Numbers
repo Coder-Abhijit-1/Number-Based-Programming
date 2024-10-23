@@ -1,0 +1,25 @@
+Logic: The Fibonacci series is a sequence where each number is the sum of the two preceding ones, usually starting with 0 and 1. Here's how it works:
+Start with 0 and 1.
+Each subsequent number is the sum of the previous two numbers.
+The logic looks like this:
+f(0) = 0
+f(1) = 1
+f(n) = f(n-1) + f(n-2) for n ≥ 2
+Examples:
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
+
+
+def fibonacci(n):
+    f0, f1 = 0, 1
+    result = [f0, f1]
+    
+    for _ in range(2, n):
+        next_term = f0 + f1
+        result.append(next_term)
+        f0, f1 = f1, next_term
+    
+    return result
+
+n = int(input("Enter any number: "))
+fibonacci_series = fibonacci(n)
+print(fibonacci_series)
